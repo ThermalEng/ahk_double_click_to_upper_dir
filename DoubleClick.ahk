@@ -35,7 +35,11 @@
 IsExplorerEmptySpace() {
     static ROLE_SYSTEM_LIST := 0x21
     if acc := AccObjectFromPoint()
+        try{
         return acc.accRole(0) = ROLE_SYSTEM_LIST
+    } catch {
+        return false
+    }
     
 }
 
